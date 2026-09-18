@@ -3,45 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integrasi Nama File & Boks Arsip</title>
+  <title>Integrasi Nama File & Boks Arsip - Arsip Dokumen</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <!-- Google Fonts Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Supabase JS Client -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
     body { font-family: 'Inter', sans-serif; }
   </style>
 </head>
-<body class="bg-slate-100 text-slate-800 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
 
-  <div class="max-w-6xl mx-auto space-y-6">
+  <!-- Minimal Header / Navbar -->
+  <header class="bg-white border-b border-gray-100 sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Title Icon -->
+      <div class="flex items-center space-x-3">
+        <div class="bg-blue-600 text-white p-2 rounded-xl shadow-md flex items-center justify-center">
+          <i class="fa-solid fa-folder-open text-lg"></i>
+        </div>
+        <span class="text-xl font-bold tracking-tight text-gray-900">Arsip <span class="text-blue-600">Dokumen</span></span>
+      </div>
 
-    <!-- Header Judul Utama -->
-    <h1 class="text-2xl sm:text-3xl font-extrabold text-center text-slate-900 tracking-tight">
-      Integrasi Nama File & Boks Arsip
-    </h1>
+      <div class="flex items-center gap-2 text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1.5 rounded-lg border border-blue-100">
+        <i class="fa-solid fa-database"></i>
+        <span>Sistem Informasi Arsip</span>
+      </div>
+    </div>
+  </header>
 
-    <!-- Card 1: Input Arsip Baru -->
-    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 space-y-4">
-      <h2 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3">
-        Input Arsip Baru
+  <!-- Banner Section Biru Gradient -->
+  <div class="bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white py-10 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <div class="max-w-7xl mx-auto relative z-10">
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2">Integrasi Nama File & Boks Arsip</h1>
+      <p class="text-blue-100 max-w-2xl text-xs sm:text-sm opacity-90">
+        Pusat penyimpanan dan pengorganisasian dokumen resmi secara terintegrasi dengan kode boks fisik dan penamaan digital otomatis.
+      </p>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full space-y-6">
+
+    <!-- Card 1: Form Input Arsip Baru -->
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 space-y-4">
+      <h2 class="text-base font-bold text-gray-900 flex items-center gap-2 border-b border-gray-100 pb-3">
+        <i class="fa-solid fa-plus-circle text-blue-600"></i> Input Arsip Baru
       </h2>
 
       <form id="formArsip" class="space-y-4">
-        <!-- Grid Input 4 Kolom -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Row 1: 4 Kolom Input Sesuai Gambar -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1.5">Tanggal Dokumen</label>
-            <input type="date" id="tglDokumen" required class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <label class="block text-xs font-semibold text-gray-700 mb-1">Tanggal Dokumen</label>
+            <input type="date" id="tglDokumen" required class="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-500 focus:bg-white transition outline-none">
           </div>
-          
+
           <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1.5">Kode Boks Fisik</label>
-            <select id="kodeBoks" required class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <label class="block text-xs font-semibold text-gray-700 mb-1">Kode Boks Fisik</label>
+            <select id="kodeBoks" required class="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-500 focus:bg-white transition outline-none">
               <option value="">-- Pilih Boks --</option>
               <option value="FIN-2026-B001">FIN-2026-B001</option>
               <option value="FIN-2026-B002">FIN-2026-B002</option>
@@ -52,8 +77,8 @@
           </div>
 
           <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1.5">Kategori Dokumen</label>
-            <select id="kategoriDokumen" required class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <label class="block text-xs font-semibold text-gray-700 mb-1">Kategori Dokumen</label>
+            <select id="kategoriDokumen" required class="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-500 focus:bg-white transition outline-none">
               <option value="KONTRAK">KONTRAK</option>
               <option value="INVOICE">INVOICE</option>
               <option value="LAPORAN">LAPORAN</option>
@@ -63,73 +88,89 @@
           </div>
 
           <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1.5">Nama / Subjek Dokumen</label>
-            <input type="text" id="namaDokumen" placeholder="Contoh: Budi Santoso" required class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <label class="block text-xs font-semibold text-gray-700 mb-1">Nama / Subjek Dokumen</label>
+            <input type="text" id="namaDokumen" placeholder="Contoh: Budi Santoso" required class="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:ring-2 focus:ring-blue-500 focus:bg-white transition outline-none">
           </div>
         </div>
 
-        <!-- Auto Generated Input Field -->
+        <!-- Row 2: Auto Generated Field -->
         <div>
-          <label class="block text-xs font-semibold text-slate-600 mb-1.5">Nama File Digital Auto-Generated</label>
-          <input type="text" id="namaFileDigital" readonly placeholder="Akan terisi otomatis..." class="w-full px-3.5 py-2.5 bg-slate-100 text-slate-600 border border-slate-200 rounded-lg text-sm font-mono outline-none">
+          <label class="block text-xs font-semibold text-gray-700 mb-1">Nama File Digital Auto-Generated</label>
+          <input type="text" id="namaFileDigital" readonly placeholder="Akan terisi otomatis..." class="w-full px-3.5 py-2.5 bg-blue-50/60 text-blue-900 border border-blue-100 rounded-xl text-xs font-mono outline-none">
         </div>
 
         <!-- Submit Button -->
         <div>
-          <button type="submit" id="btnSubmit" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-2.5 rounded-lg text-sm transition shadow-sm flex items-center gap-2">
+          <button type="submit" id="btnSubmit" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs rounded-xl shadow-sm hover:shadow transition flex items-center justify-center gap-2">
+            <i class="fa-solid fa-floppy-disk"></i>
             Simpan Data Arsip
           </button>
         </div>
       </form>
     </div>
 
-    <!-- Card 2: Daftar Arsip & Lokasi Boks Fisik -->
-    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 space-y-5">
-      <h2 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3">
+    <!-- Card 2: Tabel Daftar Arsip & Boks Fisik -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 space-y-5">
+      <h2 class="text-base font-bold text-gray-900 border-b border-gray-100 pb-3">
         Daftar Arsip & Lokasi Boks Fisik
       </h2>
 
-      <!-- Search Input -->
-      <div>
-        <input type="text" id="searchInput" placeholder="Cari nama file, kode boks, atau nama dokumen..." class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <!-- Search Input Sesuai Gambar -->
+      <div class="relative">
+        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+        <input type="text" id="searchInput" placeholder="Cari nama file, kode boks, atau nama dokumen..." class="w-full pl-9 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition">
       </div>
 
-      <!-- Data Table -->
-      <div class="overflow-x-auto">
-        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+      <!-- Data Table Sesuai Gambar dengan Tambahan Fitur Aksi (Preview & Hapus) -->
+      <div class="overflow-x-auto rounded-xl border border-gray-100">
+        <table class="w-full text-left border-collapse text-xs">
           <thead>
-            <tr class="border-b border-slate-200 text-slate-700 font-bold">
-              <th class="py-3 px-3">Nama File Digital (Sistem)</th>
-              <th class="py-3 px-3">Kode Boks Fisik</th>
-              <th class="py-3 px-3">Nama Dokumen</th>
-              <th class="py-3 px-3">Kategori</th>
-              <th class="py-3 px-3">Tgl Dokumen</th>
-              <th class="py-3 px-3 text-center">Aksi</th>
+            <tr class="bg-gray-50 text-gray-700 font-bold border-b border-gray-100">
+              <th class="py-3 px-4">Nama File Digital (Sistem)</th>
+              <th class="py-3 px-4">Kode Boks Fisik</th>
+              <th class="py-3 px-4">Nama Dokumen</th>
+              <th class="py-3 px-4">Kategori</th>
+              <th class="py-3 px-4">Tgl Dokumen</th>
+              <th class="py-3 px-4 text-center">Aksi</th>
             </tr>
           </thead>
-          <tbody id="tableBody" class="divide-y divide-slate-100 text-slate-700">
-            <!-- Rendered Rows -->
+          <tbody id="tableBody" class="divide-y divide-gray-100 text-gray-700">
+            <!-- Data baris dinamis -->
           </tbody>
         </table>
       </div>
-    </div>
 
-  </div>
+      <!-- Info Footer Tabel -->
+      <div class="flex items-center justify-between text-xs text-gray-500 pt-2">
+        <span id="textInfo">Menampilkan 0 dari 0 dokumen</span>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-100 py-6 text-center text-xs text-gray-500 mt-auto">
+    <div class="max-w-7xl mx-auto px-4">
+      &copy; 2026 Arsip Dokumen. Semua hak dilindungi.
+    </div>
+  </footer>
 
   <!-- Modal Preview Detail -->
-  <div id="modalDetail" class="fixed inset-0 bg-slate-900/50 hidden items-center justify-center z-50 p-4">
-    <div class="bg-white rounded-xl max-w-md w-full p-6 shadow-xl space-y-4">
+  <div id="modalDetail" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-xl space-y-4">
       <div class="flex justify-between items-center border-b pb-3">
-        <h3 class="font-bold text-slate-800 text-base">Detail & Preview Arsip</h3>
-        <button id="closeModal" class="text-slate-400 hover:text-slate-600">
-          <i class="fa-solid fa-xmark text-lg"></i>
+        <h3 class="font-bold text-gray-800 text-sm flex items-center gap-2">
+          <i class="fa-solid fa-file-pdf text-red-500"></i> Detail & Preview Dokumen
+        </h3>
+        <button id="closeModal" class="text-gray-400 hover:text-gray-600">
+          <i class="fa-solid fa-xmark text-base"></i>
         </button>
       </div>
-      <div id="modalContent" class="space-y-3 text-xs sm:text-sm text-slate-700">
-        <!-- Dynamic Content -->
+      <div id="modalContent" class="space-y-3 text-xs text-gray-700">
+        <!-- Content dinamis -->
       </div>
       <div class="pt-3 border-t text-right">
-        <button id="btnCloseModal" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 rounded-lg text-xs font-semibold text-slate-700 transition">
+        <button id="btnCloseModal" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-xl text-xs font-semibold text-gray-700 transition">
           Tutup
         </button>
       </div>
@@ -137,13 +178,13 @@
   </div>
 
   <script>
-    // Config Supabase
+    // Konfigurasi Supabase
     const { createClient } = supabase;
     const supabaseUrl = 'https://YOUR_SUPABASE_URL.supabase.co'; 
     const supabaseKey = 'YOUR_SUPABASE_ANON_KEY'; 
     const supabaseDb = (supabaseUrl.includes('YOUR_SUPABASE_URL')) ? null : createClient(supabaseUrl, supabaseKey);
 
-    // Elements
+    // Form Elements
     const form = document.getElementById('formArsip');
     const tglInput = document.getElementById('tglDokumen');
     const boksInput = document.getElementById('kodeBoks');
@@ -152,8 +193,9 @@
     const autoGenInput = document.getElementById('namaFileDigital');
     const searchInput = document.getElementById('searchInput');
     const tableBody = document.getElementById('tableBody');
+    const textInfo = document.getElementById('textInfo');
 
-    // Initial Default Data (Sesuai Contoh Gambar)
+    // Data Awal Default (Berdasarkan Gambar)
     let dokumenList = JSON.parse(localStorage.getItem('arsip_dokumen_data')) || [
       {
         id: '1',
@@ -165,7 +207,7 @@
       }
     ];
 
-    // Generator Nama File Otomatis
+    // Pembuat Nama File Digital Otomatis
     function updateAutoGeneratedName() {
       const tgl = tglInput.value ? tglInput.value.replace(/-/g, '') : 'YYYYMMDD';
       const boks = boksInput.value ? boksInput.value.trim().toUpperCase() : 'BOKS';
@@ -180,7 +222,7 @@
       el.addEventListener('change', updateAutoGeneratedName);
     });
 
-    // Fetch Data dari Supabase / LocalStorage
+    // Ambil Data dari Supabase / LocalStorage
     async function fetchDokumen() {
       if (supabaseDb) {
         const { data, error } = await supabaseDb
@@ -195,11 +237,11 @@
       renderTable(dokumenList);
     }
 
-    // Render Tabel
+    // Render Tabel Sesuai Desain Biru
     function renderTable(data = []) {
       const filterText = searchInput.value.toLowerCase();
       const filteredData = data.filter(item => 
-        (item.nama_file || '').toLowerCase().includes(filterText) ||
+        (item.nama_file || item.file_digital || '').toLowerCase().includes(filterText) ||
         (item.kode_boks || '').toLowerCase().includes(filterText) ||
         (item.nama_dokumen || '').toLowerCase().includes(filterText) ||
         (item.kategori || '').toLowerCase().includes(filterText)
@@ -208,44 +250,50 @@
       if (filteredData.length === 0) {
         tableBody.innerHTML = `
           <tr>
-            <td colspan="6" class="py-8 text-center text-slate-400 text-xs">
+            <td colspan="6" class="py-10 text-center text-gray-400">
+              <i class="fa-regular fa-folder-open text-3xl mb-2 block"></i>
               Tidak ada data dokumen ditemukan.
             </td>
           </tr>
         `;
+        textInfo.textContent = 'Menampilkan 0 dari 0 dokumen';
         return;
       }
 
       tableBody.innerHTML = filteredData.map(item => `
-        <tr class="hover:bg-slate-50 transition">
-          <td class="py-3 px-3">
-            <span class="inline-block bg-slate-100 text-slate-800 font-mono text-[11px] px-2 py-1 rounded border border-slate-200">
+        <tr class="hover:bg-blue-50/40 transition">
+          <td class="py-3 px-4">
+            <span class="inline-block bg-gray-100 text-gray-800 font-mono text-[11px] px-2.5 py-1 rounded-md border border-gray-200 break-all">
               ${item.nama_file || item.file_digital || '-'}
             </span>
           </td>
-          <td class="py-3 px-3">
-            <span class="inline-block bg-blue-50 text-blue-700 font-semibold text-[11px] px-2.5 py-1 rounded border border-blue-100">
+          <td class="py-3 px-4">
+            <span class="inline-block bg-blue-50 text-blue-700 font-bold text-[11px] px-2.5 py-1 rounded-md border border-blue-100">
               ${item.kode_boks || '-'}
             </span>
           </td>
-          <td class="py-3 px-3 font-medium text-slate-800">${item.nama_dokumen || '-'}</td>
-          <td class="py-3 px-3 text-slate-600">${item.kategori || '-'}</td>
-          <td class="py-3 px-3 text-slate-600 whitespace-nowrap">${item.tanggal || '-'}</td>
-          <td class="py-3 px-3 text-center">
-            <div class="flex items-center justify-center space-x-2">
-              <button onclick="openDetail('${item.id}')" title="Preview" class="p-1.5 text-blue-600 hover:bg-blue-50 rounded-md transition">
+          <td class="py-3 px-4 font-semibold text-gray-800">${item.nama_dokumen || '-'}</td>
+          <td class="py-3 px-4 text-gray-600">${item.kategori || '-'}</td>
+          <td class="py-3 px-4 text-gray-600 whitespace-nowrap">${item.tanggal || '-'}</td>
+          <td class="py-3 px-4 text-center">
+            <div class="flex items-center justify-center space-x-1">
+              <button onclick="openDetail('${item.id}')" title="Preview / Lihat" class="px-2.5 py-1.5 text-blue-600 hover:bg-blue-100 rounded-lg transition font-medium text-[11px] flex items-center gap-1">
                 <i class="fa-regular fa-eye"></i>
+                <span>Lihat</span>
               </button>
-              <button onclick="deleteDokumen('${item.id}')" title="Hapus" class="p-1.5 text-red-600 hover:bg-red-50 rounded-md transition">
+              <button onclick="deleteDokumen('${item.id}')" title="Hapus" class="px-2.5 py-1.5 text-red-600 hover:bg-red-100 rounded-lg transition font-medium text-[11px] flex items-center gap-1">
                 <i class="fa-regular fa-trash-can"></i>
+                <span>Hapus</span>
               </button>
             </div>
           </td>
         </tr>
       `).join('');
+
+      textInfo.textContent = `Menampilkan 1-${filteredData.length} dari ${data.length} dokumen`;
     }
 
-    // Submit Form (Tambah Data)
+    // Submit Form
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
@@ -262,7 +310,7 @@
       if (supabaseDb) {
         const { error } = await supabaseDb.from('dokumen').insert([newDoc]);
         if (error) {
-          alert('Gagal menyimpan ke Supabase! Menyimpan ke penyimpanan lokal.');
+          alert('Gagal menyimpan ke Supabase! Menyimpan ke memori lokal.');
           saveLocal(newDoc);
         } else {
           fetchDokumen();
@@ -281,7 +329,7 @@
       renderTable(dokumenList);
     }
 
-    // Delete Dokumen
+    // Fungsi Hapus
     window.deleteDokumen = async function(id) {
       if (!confirm('Apakah Anda yakin ingin menghapus data dokumen ini?')) return;
 
@@ -294,7 +342,7 @@
       renderTable(dokumenList);
     };
 
-    // Modal Handle & Preview
+    // Modal Preview Detail
     const modal = document.getElementById('modalDetail');
     const modalContent = document.getElementById('modalContent');
 
@@ -303,16 +351,16 @@
       if (!doc) return;
 
       modalContent.innerHTML = `
-        <div class="bg-slate-50 p-4 rounded-lg space-y-2 border border-slate-200">
-          <div><span class="text-slate-400">Subjek Dokumen:</span> <strong class="block text-slate-800 text-sm mt-0.5">${doc.nama_dokumen}</strong></div>
-          <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-200">
-            <div><span class="text-slate-400">Kode Boks:</span> <span class="block font-bold text-blue-600">${doc.kode_boks}</span></div>
-            <div><span class="text-slate-400">Kategori:</span> <span class="block font-semibold text-slate-700">${doc.kategori}</span></div>
+        <div class="bg-gray-50 p-4 rounded-xl space-y-2 border border-gray-100">
+          <div><span class="text-gray-400">Nama Dokumen:</span> <strong class="block text-gray-800 text-sm">${doc.nama_dokumen}</strong></div>
+          <div class="grid grid-cols-2 gap-2 pt-2 border-t border-gray-200">
+            <div><span class="text-gray-400">Kode Boks:</span> <span class="block font-bold text-blue-600">${doc.kode_boks}</span></div>
+            <div><span class="text-gray-400">Kategori:</span> <span class="block font-semibold text-gray-700">${doc.kategori}</span></div>
           </div>
-          <div class="pt-2 border-t border-slate-200"><span class="text-slate-400">Tanggal Dokumen:</span> <span class="block text-slate-700">${doc.tanggal}</span></div>
-          <div class="pt-2 border-t border-slate-200">
-            <span class="text-slate-400">Nama File Digital Auto-Generated:</span> 
-            <div class="font-mono text-xs text-slate-800 bg-white p-2 rounded border border-slate-200 mt-1 break-all">${doc.nama_file || doc.file_digital}</div>
+          <div class="pt-2 border-t border-gray-200"><span class="text-gray-400">Tanggal Dokumen:</span> <span class="block text-gray-700">${doc.tanggal}</span></div>
+          <div class="pt-2 border-t border-gray-200">
+            <span class="text-gray-400">Nama File Digital Auto-Generated:</span> 
+            <div class="font-mono text-xs text-blue-900 bg-white p-2 rounded-lg border border-blue-100 mt-1 break-all">${doc.nama_file || doc.file_digital}</div>
           </div>
         </div>
       `;
@@ -330,7 +378,7 @@
 
     searchInput.addEventListener('input', () => renderTable(dokumenList));
 
-    // Load Data awal
+    // Load data
     fetchDokumen();
   </script>
 </body>
