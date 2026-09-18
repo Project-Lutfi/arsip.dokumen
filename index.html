@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arsip Dokumen - PECAKPKWT</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Header / Navbar -->
+  <header class="bg-white border-b border-gray-100 sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="bg-blue-600 text-white p-2.5 rounded-xl shadow-md flex items-center justify-center">
+          <i class="fa-solid fa-shapes text-xl"></i>
+        </div>
+        <span class="text-xl font-bold tracking-tight text-gray-900">PECAK<span class="text-blue-600">PKWT</span></span>
+      </div>
+
+      <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
+        <a href="#" class="hover:text-blue-600 transition">Beranda</a>
+        <a href="#" class="hover:text-blue-600 transition">Profil</a>
+        <a href="#" class="hover:text-blue-600 transition">Layanan</a>
+        <div class="relative group cursor-pointer flex items-center gap-1 hover:text-blue-600 transition">
+          <span>Informasi</span>
+          <i class="fa-solid fa-chevron-down text-xs"></i>
+        </div>
+        <a href="#" class="text-blue-600 font-semibold border-b-2 border-blue-600 pb-1">Arsip Dokumen</a>
+        <a href="#" class="hover:text-blue-600 transition">Kontak</a>
+      </nav>
+
+      <button class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-full transition">
+        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Banner Section -->
+  <div class="bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="flex items-center gap-2 text-blue-200 text-xs sm:text-sm mb-3">
+        <span>Beranda</span>
+        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+        <span class="text-white font-medium">Arsip Dokumen</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-2">Arsip Dokumen</h1>
+      <p class="text-blue-100 max-w-xl text-sm sm:text-base opacity-90">
+        Pusat penyimpanan dan pengelolaan dokumen resmi yang dapat diakses dengan mudah dan cepat.
+      </p>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- Sidebar Navigation -->
+      <aside class="lg:col-span-3">
+        <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 space-y-1">
+          <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-blue-600 transition font-medium text-sm">
+            <i class="fa-solid fa-house w-5 text-center text-gray-400"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-blue-600 transition font-medium text-sm">
+            <i class="fa-solid fa-file-invoice w-5 text-center text-gray-400"></i>
+            <span>Profil</span>
+          </a>
+          <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-blue-600 transition font-medium text-sm">
+            <i class="fa-solid fa-handshake w-5 text-center text-gray-400"></i>
+            <span>Layanan</span>
+          </a>
+          <div class="flex items-center justify-between px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 transition cursor-pointer font-medium text-sm">
+            <div class="flex items-center space-x-3">
+              <i class="fa-solid fa-circle-info w-5 text-center text-gray-400"></i>
+              <span>Informasi</span>
+            </div>
+            <i class="fa-solid fa-chevron-down text-xs text-gray-400"></i>
+          </div>
+          <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-xl bg-blue-50 text-blue-600 font-semibold text-sm">
+            <i class="fa-solid fa-folder-open w-5 text-center text-blue-600"></i>
+            <span>Arsip Dokumen</span>
+          </a>
+          <a href="#" class="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-blue-600 transition font-medium text-sm">
+            <i class="fa-solid fa-phone w-5 text-center text-gray-400"></i>
+            <span>Kontak</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <section class="lg:col-span-9 space-y-6">
+
+        <!-- Form Input Dokumen Baru -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+          <h2 class="text-base font-semibold text-gray-800 mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-plus-circle text-blue-600"></i> Tambah Dokumen Baru
+          </h2>
+
+          <form id="formArsip" class="space-y-4">
+            <!-- Row 1: 5 Inputs -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3">
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">Tanggal Dokumen</label>
+                <input type="date" id="tglDokumen" required class="w-full px-3 py-2 bg-gray-100 border-0 rounded-lg text-xs focus:ring-2 focus:ring-blue-500 focus:bg-white transition outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">Kode Boks Fisik</label>
+                <input type="text" id="kodeBoks" placeholder="Contoh: B-01" required class="w-full px-3 py-2 bg-gray-100 border-0 rounded-lg text-xs focus:ring-2 focus:ring-blue-500 focus:bg-white transition outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">Kode Klasifikasi</label>
+                <input type="text" id="kodeKlasifikasi" placeholder="Contoh: 004/LK/2026" required class="w-full px-3 py-2 bg-gray-100 border-0 rounded-lg text-xs focus:ring-2 focus:ring-blue-500 focus:bg-white transition outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">Kategori Dokumen</label>
+                <select id="kategoriDokumen" required class="w-full px-3 py-2 bg-gray-100 border-0 rounded-lg text-xs focus:ring-2 focus:ring-blue-500 focus:bg-white transition outline-none">
+                  <option value="">Pilih Kategori</option>
+                  <option value="Laporan">Laporan</option>
+                  <option value="SK">Surat Keputusan (SK)</option>
+                  <option value="SOP">SOP</option>
+                  <option value="Keuangan">Keuangan</option>
+                  <option value="Formulir">Formulir</option>
+                  <option value="Pedoman">Pedoman</option>
+                  <option value="Surat Edaran">Surat Edaran</option>
+                  <option value="Perencanaan">Perencanaan</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-gray-700 mb-1">Nama Dokumen</label>
+                <input type="text" id="namaDokumen" placeholder="Nama dokumen" required class="w-full px-3 py-2 bg-gray-100 border-0 rounded-lg text-xs focus:ring-2 focus:ring-blue-500 focus:bg-white transition outline-none">
+              </div>
+            </div>
+
+            <!-- Row 2: Auto Generated Field -->
+            <div>
+              <label class="block text-xs font-medium text-gray-700 mb-1">Nama File Digital - Auto Generated</label>
+              <input type="text" id="namaFileDigital" readonly placeholder="Otomatis terisi berdasarkan input di atas..." class="w-full px-3.5 py-2.5 bg-blue-50 text-blue-900 border border-blue-100 rounded-lg text-xs font-mono outline-none">
+            </div>
+
+            <!-- Submit Button -->
+            <div>
+              <button type="submit" class="px-6 py-2.5 bg-sky-500 hover:bg-sky-600 text-white font-medium text-xs rounded-xl shadow-sm hover:shadow transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-floppy-disk"></i>
+                Simpan Data Arsip
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Filter & Table Card -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 space-y-6">
+          
+          <!-- Search Bar & Controls -->
+          <div class="space-y-4">
+            <div class="flex flex-col sm:flex-row gap-3">
+              <div class="relative flex-1">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                <input type="text" id="searchInput" placeholder="Cari nama dokumen, nomor, atau kata kunci..." class="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition">
+              </div>
+              <button id="btnCari" class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2.5 rounded-xl transition text-sm flex items-center justify-center space-x-2">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Cari</span>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div>
+                <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Kategori</label>
+                <select id="filterKategori" class="w-full bg-gray-50 border border-gray-200 text-gray-700 text-xs rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <option value="">Semua Kategori</option>
+                  <option value="Laporan">Laporan</option>
+                  <option value="SK">SK</option>
+                  <option value="SOP">SOP</option>
+                  <option value="Keuangan">Keuangan</option>
+                  <option value="Formulir">Formulir</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Tahun</label>
+                <select id="filterTahun" class="w-full bg-gray-50 border border-gray-200 text-gray-700 text-xs rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <option value="">Semua Tahun</option>
+                  <option value="2026">2026</option>
+                  <option value="2025">2025</option>
+                  <option value="2024">2024</option>
+                  <option value="2023">2023</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">Jenis Dokumen</label>
+                <select id="filterJenis" class="w-full bg-gray-50 border border-gray-200 text-gray-700 text-xs rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <option value="">Semua Jenis</option>
+                  <option value="PDF">PDF</option>
+                  <option value="DOCX">DOCX</option>
+                  <option value="XLSX">XLSX</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Table -->
+          <div class="overflow-x-auto rounded-xl border border-gray-100">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-gray-50 text-gray-500 font-semibold border-b border-gray-100">
+                  <th class="py-3 px-3">No</th>
+                  <th class="py-3 px-4">Nama Dokumen</th>
+                  <th class="py-3 px-3">Kategori</th>
+                  <th class="py-3 px-3">Jenis</th>
+                  <th class="py-3 px-3">Tahun</th>
+                  <th class="py-3 px-3">Tanggal</th>
+                  <th class="py-3 px-3">Status</th>
+                  <th class="py-3 px-3 text-center">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody" class="divide-y divide-gray-100 text-gray-700">
+                <!-- Data kosong awal -->
+                <tr id="emptyRow">
+                  <td colspan="8" class="py-12 text-center text-gray-400">
+                    <i class="fa-regular fa-folder-open text-4xl mb-3 block"></i>
+                    Belum ada data dokumen. Silakan isi form di atas untuk menambahkan data.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pagination -->
+          <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 pt-2 gap-3">
+            <span id="textInfo">Menampilkan 0 dari 0 dokumen</span>
+            <div class="flex items-center space-x-1">
+              <button class="px-3 py-1.5 border border-gray-200 rounded-lg hover:bg-gray-50 transition disabled:opacity-50" disabled>
+                <i class="fa-solid fa-chevron-left mr-1"></i> Sebelumnya
+              </button>
+              <button class="px-3 py-1.5 bg-blue-600 text-white rounded-lg font-medium">1</button>
+              <button class="px-3 py-1.5 border border-gray-200 rounded-lg hover:bg-gray-50 transition disabled:opacity-50" disabled>
+                Berikutnya <i class="fa-solid fa-chevron-right ml-1"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-100 py-6 text-center text-xs text-gray-500 mt-auto">
+    <div class="max-w-7xl mx-auto px-4">
+      &copy; 2026 PECAKPKWT. Semua hak dilindungi.
+    </div>
+  </footer>
+
+  <!-- Modal View Detail -->
+  <div id="modalDetail" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-xl space-y-4">
+      <div class="flex justify-between items-center border-b pb-3">
+        <h3 class="font-bold text-gray-800 text-base">Detail Dokumen</h3>
+        <button id="closeModal" class="text-gray-400 hover:text-gray-600 text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div id="modalContent" class="space-y-3 text-xs text-gray-700">
+        <!-- Dynamic content -->
+      </div>
+      <div class="pt-3 border-t text-right">
+        <button id="btnCloseModal" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-xl text-xs font-medium text-gray-700 transition">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Data list (mulai dari kosong)
+    let dokumenList = [];
+
+    // Elements
+    const form = document.getElementById('formArsip');
+    const tglInput = document.getElementById('tglDokumen');
+    const boksInput = document.getElementById('kodeBoks');
+    const klasifikasiInput = document.getElementById('kodeKlasifikasi');
+    const kategoriInput = document.getElementById('kategoriDokumen');
+    const namaInput = document.getElementById('namaDokumen');
+    const autoGenInput = document.getElementById('namaFileDigital');
+    const tableBody = document.getElementById('tableBody');
+    const textInfo = document.getElementById('textInfo');
+
+    // Auto generate digital file name
+    function updateAutoGeneratedName() {
+      const tgl = tglInput.value ? tglInput.value.replace(/-/g, '') : 'YYYYMMDD';
+      const boks = boksInput.value ? boksInput.value.trim().toUpperCase().replace(/\s+/g, '_') : 'BOKS';
+      const klas = klasifikasiInput.value ? klasifikasiInput.value.trim().toUpperCase().replace(/[\/\s]/g, '-') : 'KLAS';
+      const nama = namaInput.value ? namaInput.value.trim().toUpperCase().replace(/\s+/g, '_') : 'DOKUMEN';
+      
+      autoGenInput.value = `${tgl}_${boks}_${klas}_${nama}.pdf`;
+    }
+
+    [tglInput, boksInput, klasifikasiInput, namaInput].forEach(input => {
+      input.addEventListener('input', updateAutoGeneratedName);
+    });
+
+    // Format Tanggal
+    function formatDate(dateStr) {
+      if(!dateStr) return '';
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agt', 'Sep', 'Okt', 'Nov', 'Des'];
+      const d = new Date(dateStr);
+      if(isNaN(d)) return dateStr;
+      return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+    }
+
+    // Render Table
+    function renderTable(data = dokumenList) {
+      if (data.length === 0) {
+        tableBody.innerHTML = `
+          <tr id="emptyRow">
+            <td colspan="8" class="py-12 text-center text-gray-400">
+              <i class="fa-regular fa-folder-open text-4xl mb-3 block"></i>
+              Belum ada data dokumen. Silakan isi form di atas untuk menambahkan data.
+            </td>
+          </tr>
+        `;
+        textInfo.textContent = 'Menampilkan 0 dari 0 dokumen';
+        return;
+      }
+
+      tableBody.innerHTML = data.map((item, index) => `
+        <tr class="hover:bg-gray-50/80 transition">
+          <td class="py-3 px-3 font-medium text-gray-400">${String(index + 1).padStart(2, '0')}</td>
+          <td class="py-3 px-4">
+            <div class="flex items-center space-x-3">
+              <div class="w-8 h-8 bg-red-100 text-red-600 rounded-lg flex items-center justify-center flex-shrink-0 font-bold text-[10px]">
+                PDF
+              </div>
+              <div>
+                <div class="font-semibold text-gray-800">${item.nama}</div>
+                <div class="text-[10px] text-gray-400">No. ${item.kodeKlasifikasi}</div>
+              </div>
+            </div>
+          </td>
+          <td class="py-3 px-3 font-medium">${item.kategori}</td>
+          <td class="py-3 px-3 text-gray-500 font-mono text-[11px]">PDF</td>
+          <td class="py-3 px-3">${item.tahun}</td>
+          <td class="py-3 px-3 whitespace-nowrap">${item.tanggalFormatted}</td>
+          <td class="py-3 px-3">
+            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-emerald-100 text-emerald-700">
+              Aktif
+            </span>
+          </td>
+          <td class="py-3 px-3 text-center">
+            <button onclick="openDetail(${item.id})" class="inline-flex items-center space-x-1 px-3 py-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-lg font-medium transition text-[11px]">
+              <i class="fa-regular fa-eye"></i>
+              <span>Lihat</span>
+            </button>
+          </td>
+        </tr>
+      `).join('');
+
+      textInfo.textContent = `Menampilkan 1-${data.length} dari ${data.length} dokumen`;
+    }
+
+    // Submit Form
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const year = new Date(tglInput.value).getFullYear();
+
+      const newDoc = {
+        id: Date.now(),
+        nama: namaInput.value,
+        kodeKlasifikasi: klasifikasiInput.value,
+        kodeBoks: boksInput.value,
+        kategori: kategoriInput.value,
+        tahun: year,
+        tanggalFormatted: formatDate(tglInput.value),
+        fileDigital: autoGenInput.value
+      };
+
+      dokumenList.unshift(newDoc);
+      renderTable();
+
+      form.reset();
+      autoGenInput.value = '';
+    });
+
+    // Modal Handle
+    const modal = document.getElementById('modalD
